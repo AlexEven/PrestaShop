@@ -156,18 +156,18 @@ class AdminCmsContentControllerCore extends AdminController
                 $this->toolbar_title[] = sprintf($this->l('Edit: %s'), $cms_page->meta_title[$this->context->employee->id_lang]);
             }
         } else {
-            $this->toolbar_title[] = $this->l('CMS');
+            $this->toolbar_title[] = $this->l('Pages');
         }
 
         if ($this->display == 'list') {
             $this->page_header_toolbar_btn['new_cms_category'] = array(
                 'href' => self::$currentIndex.'&addcms_category&token='.$this->token,
-                'desc' => $this->l('Add new CMS category', null, null, false),
+                'desc' => $this->l('Add new pages category', null, null, false),
                 'icon' => 'process-icon-new'
             );
             $this->page_header_toolbar_btn['new_cms_page'] = array(
                 'href' => self::$currentIndex.'&addcms&id_cms_category='.(int)$id_cms_category.'&token='.$this->token,
-                'desc' => $this->l('Add new CMS page', null, null, false),
+                'desc' => $this->l('Add new page', null, null, false),
                 'icon' => 'process-icon-new'
             );
         }
@@ -250,10 +250,10 @@ class AdminCmsContentControllerCore extends AdminController
                 if (isset($position) && $cms->updatePosition($way, $position)) {
                     die(true);
                 } else {
-                    die('{"hasError" : true, "errors" : "Can not update cms position"}');
+                    die('{"hasError" : true, "errors" : "Cannot update page position."}');
                 }
             } else {
-                die('{"hasError" : true, "errors" : "This cms can not be loaded"}');
+                die('{"hasError" : true, "errors" : "This page cannot be loaded."}');
             }
         }
     }
@@ -279,10 +279,10 @@ class AdminCmsContentControllerCore extends AdminController
                 if (isset($position) && $cms_category->updatePosition($way, $position)) {
                     die(true);
                 } else {
-                    die('{"hasError" : true, "errors" : "Can not update cms categories position"}');
+                    die('{"hasError" : true, "errors" : "Cannot update pages categories position."}');
                 }
             } else {
-                die('{"hasError" : true, "errors" : "This cms category can not be loaded"}');
+                die('{"hasError" : true, "errors" : "This pages category can not be loaded."}');
             }
         }
     }

@@ -181,7 +181,7 @@ class AdminImagesControllerCore extends AdminController
         if ($this->display_move) {
             $this->fields_options['product_images']['fields']['PS_LEGACY_IMAGES'] = array(
                 'title' => $this->l('Use the legacy image filesystem'),
-                'hint' => $this->l('This should be set to yes unless you successfully moved images in "Images" page under the "Preferences" menu.'),
+                'hint' => $this->l('This should be set to yes unless you successfully moved images in "Images" page under the "Design" menu.'),
                 'validation' => 'isBool',
                 'cast' => 'intval',
                 'required' => false,

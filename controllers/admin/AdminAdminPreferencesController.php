@@ -50,7 +50,7 @@ class AdminAdminPreferencesControllerCore extends AdminController
                 'fields' =>    array(
                     'PRESTASTORE_LIVE' => array(
                         'title' => $this->l('Automatically check for module updates'),
-                        'hint' => $this->l('New modules and updates are displayed on the modules page.'),
+                        'hint' => $this->l('New module updates are displayed on the modules page, "Notifications" section.'),
                         'validation' => 'isBool',
                         'cast' => 'intval',
                         'type' => 'bool',

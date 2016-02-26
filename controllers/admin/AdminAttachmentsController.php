@@ -88,7 +88,7 @@ class AdminAttachmentsControllerCore extends AdminController
         parent::setMedia();
 
         $this->addJs(_PS_JS_DIR_.'/admin/attachments.js');
-        Media::addJsDefL('confirm_text', $this->l('This attachment is associated with the following products, do you really want to  delete it?', null, true, false));
+        Media::addJsDefL('confirm_text', $this->l('This file is associated with the following products, do you really want to delete it?', null, true, false));
     }
 
     public static function displayHumanReadableSize($size)
@@ -101,7 +101,7 @@ class AdminAttachmentsControllerCore extends AdminController
         if (empty($this->display)) {
             $this->page_header_toolbar_btn['new_attachment'] = array(
                 'href' => self::$currentIndex.'&addattachment&token='.$this->token,
-                'desc' => $this->l('Add new attachment', null, null, false),
+                'desc' => $this->l('Add new file', null, null, false),
                 'icon' => 'process-icon-new'
             );
         }
@@ -115,7 +115,7 @@ class AdminAttachmentsControllerCore extends AdminController
             $link = $this->context->link->getPageLink('attachment', true, null, 'id_attachment='.$obj->id);
             Tools::redirectLink($link);
         }
-        return $this->displayWarning($this->l('File not found'));
+        return $this->displayWarning($this->l('File not found.'));
     }
 
     public function renderForm()
@@ -131,7 +131,7 @@ class AdminAttachmentsControllerCore extends AdminController
 
         $this->fields_form = array(
             'legend' => array(
-                'title' => $this->l('Attachment'),
+                'title' => $this->l('File'),
                 'icon' => 'icon-paper-clip'
             ),
             'input' => array(

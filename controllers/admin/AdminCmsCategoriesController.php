@@ -98,7 +98,7 @@ class AdminCmsCategoriesControllerCore extends AdminController
             if ($id_cms_category = (int)Tools::getValue('id_cms_category')) {
                 $this->id_object = $id_cms_category;
                 if (!CMSCategory::checkBeforeMove($id_cms_category, (int)Tools::getValue('id_parent'))) {
-                    $this->errors[] = Tools::displayError('The CMS Category cannot be moved here.');
+                    $this->errors[] = Tools::displayError('The Pages Category cannot be moved here.');
                     return false;
                 }
             }
@@ -207,7 +207,7 @@ class AdminCmsCategoriesControllerCore extends AdminController
 
         $this->fields_form = array(
             'legend' => array(
-                'title' => $this->l('CMS Category'),
+                'title' => $this->l('Pages Category'),
                 'icon' => 'icon-folder-close'
             ),
             'input' => array(
@@ -241,7 +241,7 @@ class AdminCmsCategoriesControllerCore extends AdminController
                 // custom template
                 array(
                     'type' => 'select_category',
-                    'label' => $this->l('Parent CMS Category'),
+                    'label' => $this->l('Parent Pages Category'),
                     'name' => 'id_parent',
                     'options' => array(
                         'html' => $html_categories,

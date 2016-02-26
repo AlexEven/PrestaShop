@@ -87,7 +87,7 @@ class AdminContactsControllerCore extends AdminController
                     'required' => false,
                     'class' => 't',
                     'is_bool' => true,
-                    'hint' => $this->l('If enabled, all messages will be saved in the "Customer Service" page under the "Customer" menu.'),
+                    'hint' => $this->l('If enabled, all messages will be saved in the "Customer Service" page.'),
                     'values' => array(
                         array(
                             'id' => 'customer_service_on',
@@ -115,7 +115,7 @@ class AdminContactsControllerCore extends AdminController
                 'title' => $this->l('Save'),
             )
         );
-        
+
         if (Shop::isFeatureActive()) {
             $this->fields_form['input'][] = array(
                 'type' => 'shop',

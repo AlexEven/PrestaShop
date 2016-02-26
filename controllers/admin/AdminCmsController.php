@@ -116,14 +116,14 @@ class AdminCmsControllerCore extends AdminController
         $this->fields_form = array(
             'tinymce' => true,
             'legend' => array(
-                'title' => $this->l('CMS Page'),
+                'title' => $this->l('Page'),
                 'icon' => 'icon-folder-close'
             ),
             'input' => array(
                 // custom template
                 array(
                     'type' => 'select_category',
-                    'label' => $this->l('CMS Category'),
+                    'label' => $this->l('Pages Category'),
                     'name' => 'id_cms_category',
                     'options' => array(
                         'html' => $html_categories,

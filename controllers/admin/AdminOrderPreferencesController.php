@@ -98,8 +98,8 @@ class AdminOrderPreferencesControllerCore extends AdminController
                         )
                     ),
                     'PS_CONDITIONS_CMS_ID' => array(
-                        'title' => $this->l('CMS page for the Conditions of use'),
-                        'hint' => $this->l('Choose the CMS page which contains your store\'s conditions of use.'),
+                        'title' => $this->l('Page for the Conditions of use'),
+                        'hint' => $this->l('Choose the page which contains your store\'s conditions of use.'),
                         'validation' => 'isInt',
                         'type' => 'select',
                         'list' => $cms_tab,
@@ -165,7 +165,7 @@ class AdminOrderPreferencesControllerCore extends AdminController
         $sql = 'SELECT `id_cms` FROM `'._DB_PREFIX_.'cms`
 				WHERE id_cms = '.(int)Tools::getValue('PS_CONDITIONS_CMS_ID');
         if (Tools::getValue('PS_CONDITIONS') && (Tools::getValue('PS_CONDITIONS_CMS_ID') == 0 || !Db::getInstance()->getValue($sql))) {
-            $this->errors[] = Tools::displayError('Assign a valid CMS page if you want it to be read.');
+            $this->errors[] = Tools::displayError('Assign a valid page if you want it to be read.');
         }
     }
 }
