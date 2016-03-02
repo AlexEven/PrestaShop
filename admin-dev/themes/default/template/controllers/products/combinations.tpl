@@ -143,7 +143,7 @@
 			<div class="col-lg-1"><span class="pull-right">{include file="controllers/products/multishop/checkbox.tpl" field="attribute_wholesale_price" type="default"}</span></div>
 			<label class="control-label col-lg-2" for="attribute_wholesale_price">
 				<span class="label-tooltip" data-toggle="tooltip" title="{l s='Set to zero if the price does not change.'}">
-					{l s='Wholesale price'}
+					{l s='Cost price'}
 				</span>
 			</label>
 			<div class="col-lg-9">
@@ -154,7 +154,7 @@
 					</span>
 					<input type="text" name="attribute_wholesale_price" id="attribute_wholesale_price" value="0" onKeyUp="if (isArrowKey(event)) return ;this.value = this.value.replace(/,/g, '.');" />
 				</div>
-				<span style="display:none;" id="attribute_wholesale_price_full" class="help-block">{l s='Overrides the wholesale price from the "Prices" tab.'}</span>
+				<span style="display:none;" id="attribute_wholesale_price_full" class="help-block">{l s='Overrides the cost price from the "Prices" tab.'}</span>
 			</div>
 
 		</div>

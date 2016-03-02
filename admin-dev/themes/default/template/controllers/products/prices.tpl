@@ -116,20 +116,20 @@ $(document).ready(function () {
 	<div class="form-group">
 		<div class="col-lg-1"><span class="pull-right">{include file="controllers/products/multishop/checkbox.tpl" field="wholesale_price" type="default"}</span></div>
 		<label class="control-label col-lg-2" for="wholesale_price">
-			<span class="label-tooltip" data-toggle="tooltip" title="{l s='The wholesale price is the price you paid for the product. Do not include the tax.'}">{if !$country_display_tax_label || $tax_exclude_taxe_option}{l s='Wholesale price'}{else}{l s='Pre-tax wholesale price'}{/if}</span>
+			<span class="label-tooltip" data-toggle="tooltip" title="{l s='The cost price is the price you paid for the product. Do not include the tax.'}">{if !$country_display_tax_label || $tax_exclude_taxe_option}{l s='Cost price'}{else}{l s='Pre-tax cost price'}{/if}</span>
 		</label>
 		<div class="col-lg-2">
 			<div class="input-group">
 				<span class="input-group-addon">{$currency->sign}</span>
 				<input maxlength="27" name="wholesale_price" id="wholesale_price" type="text" value="{{toolsConvertPrice price=$product->wholesale_price}|string_format:$priceDisplayPrecisionFormat}" onchange="this.value = this.value.replace(/,/g, '.');" />
 			</div>
-			{if isset($pack) && $pack->isPack($product->id)}<p class="help-block">{l s='The sum of wholesale prices of the products in the pack is %s%s%s' sprintf=[$currency->sign,{toolsConvertPrice price=$pack->noPackWholesalePrice($product->id)|string_format:$priceDisplayPrecisionFormat},$currency->sign]}</p>{/if}
+			{if isset($pack) && $pack->isPack($product->id)}<p class="help-block">{l s='The sum of cost prices of the products in the pack is %s%s%s' sprintf=[$currency->sign,{toolsConvertPrice price=$pack->noPackWholesalePrice($product->id)|string_format:$priceDisplayPrecisionFormat},$currency->sign]}</p>{/if}
 		</div>
 	</div>
 	<div class="form-group">
 		<div class="col-lg-1"><span class="pull-right">{include file="controllers/products/multishop/checkbox.tpl" field="price" type="price"}</span></div>
 		<label class="control-label col-lg-2" for="priceTE">
-			<span class="label-tooltip" data-toggle="tooltip" title="{l s='The pre-tax retail price is the price for which you intend sell this product to your customers. It should be higher than the pre-tax wholesale price: the difference between the two will be your margin.'}">{if !$country_display_tax_label || $tax_exclude_taxe_option}{l s='Retail price'}{else}{l s='Pre-tax retail price'}{/if}</span>
+			<span class="label-tooltip" data-toggle="tooltip" title="{l s='The pre-tax retail price is the price for which you intend sell this product to your customers. It should be higher than the pre-tax cost price: the difference between the two will be your margin.'}">{if !$country_display_tax_label || $tax_exclude_taxe_option}{l s='Retail price'}{else}{l s='Pre-tax retail price'}{/if}</span>
 		</label>
 		<div class="col-lg-2">
 			<div class="input-group">

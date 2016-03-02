@@ -158,7 +158,7 @@ class AdminDashboardControllerCore extends AdminController
 
         $forms['other']['fields']['CONF_AVERAGE_PRODUCT_MARGIN'] = array(
             'title' => $this->l('Average gross margin percentage'),
-            'desc' => $this->l('You should calculate this percentage as follows: ((total sales revenue) - (cost of goods sold)) / (total sales revenue) * 100. This value is only used to calculate the Dashboard approximate gross margin, if you do not specify the wholesale price for each product.'),
+            'desc' => $this->l('You should calculate this percentage as follows: ((total sales revenue) - (cost of goods sold)) / (total sales revenue) * 100. This value is only used to calculate the Dashboard approximate gross margin, if you do not specify the cost price for each product.'),
             'validation' => 'isPercentage',
             'cast' => 'intval',
             'type' => 'text',
